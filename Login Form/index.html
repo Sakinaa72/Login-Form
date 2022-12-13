@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login From</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please Login</h1>
+      <form>
+        <div class="form-control">
+          <input type="text" required />
+          <label>Email</label>
+        </div>
+        <div class="form-control">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <div>
+          <button class="btn">Login</button>
+        </div>
+        <p class="text">Don't have an account? <a href="#">Register</a></p>
+      </form>
+      <script>
+        const labels = document.querySelectorAll(".form-control label");
+
+        labels.forEach((label) => {
+          label.innerHTML = label.innerText
+            .split("")
+            .map(
+              (letter, idx) =>
+                `<span style="transition-delay:${idx * 50}ms">${letter}</span>`
+            )
+            .join("");
+        });
+      </script>
+    </div>
+  </body>
+</html>
